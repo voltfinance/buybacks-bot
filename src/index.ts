@@ -2,12 +2,13 @@ import dotenv from 'dotenv'
 import { ethers } from 'ethers'
 import { pairs, VOLT_MAKER_ADDRESS } from './constants'
 import VOLT_MAKER_ABI from './constants/abis/voltMaker.json'
+import signer from './signer'
 
 dotenv.config()
 
 async function buyback() {
     try {
-        const voltMaker = new ethers.Contract(VOLT_MAKER_ADDRESS, VOLT_MAKER_ABI)
+        const voltMaker = new ethers.Contract(VOLT_MAKER_ADDRESS, VOLT_MAKER_ABI, signer)
     
         let params: any = [[], []]
     

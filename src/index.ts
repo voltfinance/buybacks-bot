@@ -15,7 +15,10 @@ async function buyback() {
             params = [[...params[0], pair[0]], [...params[1], pair[1]]]
         }
     
-        await voltMaker.convertMultiple(params[0], params[1])
+        await voltMaker.convertMultiple(params[0], params[1], {
+            gasPrice: '10000000000',
+            gasLimit: '19980470'
+        })
     } catch (error) {
         console.error(error)
     }

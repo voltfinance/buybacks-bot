@@ -26,8 +26,6 @@ export const pairs = [
     [WFUSE, VOLT],
     [WBTC, WETH],
     [WFUSE, BUSD],
-    [WFUSE, USDC],
-    [WFUSE, atUST],
     [WFUSE, WETH],
     [WFUSE, G$],
     [FUSD, BNB]

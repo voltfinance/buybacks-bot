@@ -4,6 +4,8 @@ const WFUSE = '0x0be9e53fd7edac9f859882afdda116645287c629'
 
 const USDC = '0x620fd5fa44be6af63715ef4e65ddfa0387ad13f5'
 
+const USDT = '0xfadbbf8ce7d5b7041be672561bba99f79c532e10'
+
 const WETH = '0xa722c13135930332eb3d749b2f0906559d2c5b99'
 
 const WBTC = '0x33284f95ccb7b948d9d352e1439561cf83d8d00d'
@@ -21,6 +23,7 @@ const G$ = '0x495d133b938596c9984d462f007b676bdc57ecec'
 export const VOLT_MAKER_ADDRESS = '0x0b72125d6c42Fb7a1ec2763500a8d8b758b0F3ef'
 
 export const pairs = [
+    [WFUSE, USDT],
     [WFUSE, FUSD],
     [FUSD, VOLT],
     [WFUSE, VOLT],

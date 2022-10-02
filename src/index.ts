@@ -9,16 +9,17 @@ async function buyback() {
     try {
         const voltMaker = new ethers.Contract(VOLT_MAKER_ADDRESS, VOLT_MAKER_ABI, signer)
     
-        let params: any = [[], []]
-    
         for (const pair of pairs) {
-            params = [[...params[0], pair[0]], [...params[1], pair[1]]]
+            try {
+                await voltMaker.convert(pair[0], pair[1], {
+                    gasPrice: '10000000000',
+                    gasLimit: '19980470'
+                })
+            } catch (error) {
+                console.error(`Failed to convert pair for ${pair[0]}, ${pair[1]}`)
+            }
         }
-    
-        await voltMaker.convertMultiple(params[0], params[1], {
-            gasPrice: '10000000000',
-            gasLimit: '19980470'
-        })
+
     } catch (error) {
         console.error(error)
     }

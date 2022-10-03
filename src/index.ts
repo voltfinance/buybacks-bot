@@ -27,5 +27,4 @@ async function buyback() {
 
 console.log('Starting buybacks bot...')
 
-// setInterval(buyback, Number(process.env.INTERVAL))
-buyback()
+setInterval(buyback, Number(process.env.INTERVAL))

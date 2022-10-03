@@ -16,7 +16,7 @@ async function buyback() {
                     gasLimit: '19980470'
                 })
             } catch (error) {
-                console.error(`Failed to convert pair for ${pair[0]}, ${pair[1]}`)
+                console.error(`Failed to convert pair for ${pair[0]}, ${pair[1]} `, error)
             }
         }
 
@@ -27,4 +27,5 @@ async function buyback() {
 
 console.log('Starting buybacks bot...')
 
-setInterval(buyback, Number(process.env.INTERVAL))
+// setInterval(buyback, Number(process.env.INTERVAL))
+buyback()

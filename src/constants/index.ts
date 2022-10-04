@@ -20,10 +20,13 @@ const BNB = '0x6acb34b1df86e254b544189ec32cf737e2482058'
 
 const G$ = '0x495d133b938596c9984d462f007b676bdc57ecec'
 
+const agEUR = '0xefaeee334f0fd1712f9a8cc375f427d9cdd40d73' 
+
 export const VOLT_MAKER_ADDRESS = '0x0b72125d6c42Fb7a1ec2763500a8d8b758b0F3ef'
 
 export const pairs = [
     [WFUSE, USDT],
+    [WFUSE, USDC],
     [WFUSE, FUSD],
     [FUSD, VOLT],
     [WFUSE, VOLT],
@@ -31,5 +34,6 @@ export const pairs = [
     [WFUSE, BUSD],
     [WFUSE, WETH],
     [WFUSE, G$],
-    [FUSD, BNB]
+    [FUSD, BNB],
+    [WFUSE, agEUR]
 ]

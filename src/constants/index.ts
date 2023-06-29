@@ -1,4 +1,6 @@
-const FUSD = '0x249be57637d8b013ad64785404b24aebae9b098b'
+const dFUSD = '0x249be57637d8b013ad64785404b24aebae9b098b'
+
+const FUSD = '0xd0ce1b4A349C35e61Af02f5971e71ac502441E49'
 
 const WFUSE = '0x0be9e53fd7edac9f859882afdda116645287c629'
 
@@ -22,18 +24,28 @@ const G$ = '0x495d133b938596c9984d462f007b676bdc57ecec'
 
 const agEUR = '0xefaeee334f0fd1712f9a8cc375f427d9cdd40d73' 
 
+const AMP = '0x2b09179D26FdDB27a24ee25328890791c7A984c2'
+
+const CEUS = '0x4e69Ae0CD024754655b4eF74F24A8DCB39Ba07e8'
+
 export const VOLT_MAKER_ADDRESS = '0x0b72125d6c42Fb7a1ec2763500a8d8b758b0F3ef'
 
 export const pairs = [
+    [WFUSE, FUSD],
+    [VOLT, FUSD],
+    [FUSD, BNB],
+    [WFUSE, AMP],
+    [WFUSE, CEUS],
     [WFUSE, USDT],
     [WFUSE, USDC],
-    [WFUSE, FUSD],
-    [FUSD, VOLT],
+    [WFUSE, dFUSD],
+    [dFUSD, VOLT],
     [WFUSE, VOLT],
     [WBTC, WETH],
     [WFUSE, BUSD],
     [WFUSE, WETH],
     [WFUSE, G$],
-    [FUSD, BNB],
+    [dFUSD, BNB],
+    [VOLT, BNB],
     [WFUSE, agEUR]
 ]

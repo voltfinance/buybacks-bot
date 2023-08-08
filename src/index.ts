@@ -1,7 +1,8 @@
 import { BigNumber, ethers } from 'ethers'
 
-import { pairs, VOLT_MAKER_ADDRESS } from './constants'
+import { pairs, VOLT, VOLT_MAKER_ADDRESS, xVOLT } from './constants'
 import VOLT_MAKER_ABI from './constants/abis/voltMaker.json'
+import ERC20_ABI from './constants/abis/erc20.json'
 import signer from './signer'
 
 function calculateGasMargin(value: BigNumber): BigNumber {
@@ -30,6 +31,18 @@ async function buyback() {
     }
 }
 
-console.log('Starting buybacks bot...')
+async function transferRewards() {
+    try {
+        const voltToken = new ethers.Contract(VOLT, ERC20_ABI, signer)
+
+        await voltToken.tranfer(xVOLT, '27777000000000000000000')
+    } catch (error) {
+        console.error('Failed to transfer rewards', error)
+    }
+}
 
 setInterval(buyback, Number(process.env.INTERVAL))
+setInterval(transferRewards, Number('86400000'))
+
+console.log('Starting buybacks and rewards bot...')
+

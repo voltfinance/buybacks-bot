@@ -35,7 +35,7 @@ async function transferRewards() {
     try {
         const voltToken = new ethers.Contract(VOLT, ERC20_ABI, signer)
 
-        await voltToken.tranfer(xVOLT, '27777000000000000000000')
+        await voltToken.transfer(xVOLT, '27777000000000000000000')
     } catch (error) {
         console.error('Failed to transfer rewards', error)
     }

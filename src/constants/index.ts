@@ -28,9 +28,23 @@ const AMP = '0x2b09179D26FdDB27a24ee25328890791c7A984c2'
 
 const CEUS = '0x4e69Ae0CD024754655b4eF74F24A8DCB39Ba07e8'
 
+const USDT_V2 = '0x68c9736781e9316ebf5c3d49fe0c1f45d2d104cd'
+
+const USDC_V2 = '0x28C3d1cD466Ba22f6cae51b1a4692a831696391A'
+
+const QIJI = '0x4b9aE621E54BF1ecFe39366BCA0018d97A2D510b'
+
+const BTZ = '0x7641d492c17795fb4cbaa8df99116c9c482c81a8'
+
+const FOO = '0x74616164eb1892cec5fa553d45b3e5d6df7bc7b9'
+
+const LADY = '0xde4b9879b56187d13b2c41da24c72ff100a5ac9a'
+
 export const xVOLT = '0x97a6e78c9208c21afaDa67e7E61d7ad27688eFd1'
 
 export const VOLT_MAKER_ADDRESS = '0xAC65feb1A13082995395dF19FfCD7f59A2EB5D65'
+
+export const VOLT_MAKER_V4_ADDRESS = '0x0d4277d49bFDB794b0b4f44C273c6BDa929F2d7d'
 
 export const pairs = [
     [WFUSE, FUSD],
@@ -49,5 +63,10 @@ export const pairs = [
     [WFUSE, G$],
     [dFUSD, BNB],
     [VOLT, BNB],
-    [WFUSE, agEUR]
+    [WFUSE, agEUR],
+    [WFUSE, QIJI],
+    [WFUSE, USDT_V2],
+    [CEUS, LADY],
+    [WFUSE, BTZ],
+    [LADY, FOO]
 ]

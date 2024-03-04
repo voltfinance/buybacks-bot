@@ -11,26 +11,6 @@ function calculateGasMargin(value: BigNumber): BigNumber {
 
 async function buyback() {
     try {
-        const voltMaker = new ethers.Contract(VOLT_MAKER_ADDRESS, VOLT_MAKER_ABI, signer)
-    
-        for (const pair of pairs) {
-            try {
-                const estimateGas = await voltMaker.estimateGas.convert(pair[0], pair[1])
-                await voltMaker.convert(pair[0], pair[1], { 
-                    gasLimit: calculateGasMargin(estimateGas)
-                })
-
-                console.log(`V3 Converted pair for ${pair[0]}, ${pair[1]}`)
-            } catch (error) {
-                console.error(`Failed to convert pair for ${pair[0]}, ${pair[1]} `, error)
-            }
-        }
-
-    } catch (error) {
-        console.error(error)
-    }
-
-    try {
         const voltMaker = new ethers.Contract(VOLT_MAKER_V4_ADDRESS, VOLT_MAKER_ABI, signer)
     
         for (const pair of pairs) {

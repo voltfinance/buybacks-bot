@@ -46,6 +46,8 @@ export const VOLT_MAKER_ADDRESS = '0xAC65feb1A13082995395dF19FfCD7f59A2EB5D65'
 
 export const VOLT_MAKER_V4_ADDRESS = '0x0d4277d49bFDB794b0b4f44C273c6BDa929F2d7d'
 
+export const FUSD_V3 = '0xce86a1cf3cff48139598de6bf9b1df2e0f79f86f'
+
 export const pairs = [
     [WFUSE, FUSD],
     [VOLT, FUSD],
@@ -68,5 +70,9 @@ export const pairs = [
     [WFUSE, USDT_V2],
     [CEUS, LADY],
     [WFUSE, BTZ],
-    [LADY, FOO]
+    [LADY, FOO],
+    [WFUSE, FUSD_V3],
+    [BNB, FUSD_V3],
+    [VOLT, FUSD_V3],
+    [WFUSE, USDC_V2]
 ]

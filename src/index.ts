@@ -29,7 +29,6 @@ async function buyback() {
     } catch (error) {
         console.error(error)
     }
-    await transferRewards();
 }
 
 async function transferRewards() {
@@ -46,6 +45,7 @@ async function transferRewards() {
     }
 }
 setInterval(buyback, Number(process.env.INTERVAL))
+setInterval(transferRewards, Number('86400000'))
 
 console.log('Starting buybacks and rewards bot...')
 

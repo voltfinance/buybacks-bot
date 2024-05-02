@@ -45,7 +45,7 @@ async function transferRewards() {
     }
 }
 setInterval(buyback, Number(process.env.INTERVAL))
-setInterval(transferRewards, Number('86400000'))
+setInterval(transferRewards, 7 * 24 * 60 * 60 * 1000)
 
 console.log('Starting buybacks and rewards bot...')
 

@@ -17,7 +17,7 @@ async function buyback() {
             try {
                 const estimateGas = await feeManager.estimateGas.collectFee(i)
                 await feeManager.collectFee(i, {
-                    gasLimit: calculateGasMargin(estimateGas)
+                    gasLimit: BigNumber.from(20000000)
                 })
 
                 console.log(`Convert run for ${i} feeCollector`)

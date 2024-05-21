@@ -13,7 +13,7 @@ function calculateGasMargin(value: BigNumber): BigNumber {
 async function buyback() {
     try {
         const feeManager = new ethers.Contract(FEE_MANAGER_ADDRESS, FEE_MANAGER_ABI, signer)
-        for (let i = 0; i < 4; i++) {
+        for (let i = 0; i < 5; i++) {
             try {
                 const estimateGas = await feeManager.estimateGas.collectFee(i)
                 await feeManager.collectFee(i, {

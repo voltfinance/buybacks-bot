@@ -1,7 +1,8 @@
 import { BigNumber, ethers } from 'ethers'
 
-import { FEE_MANAGER_ADDRESS } from './constants'
+import { BURN_MANAGER_ADDRESS, FEE_MANAGER_ADDRESS } from './constants'
 import FEE_MANAGER_ABI from './constants/abis/FeeManager.json'
+import BURN_MANAGER_ABI from './constants/abis/BurnManager.json'
 import signer from './signer'
 import dotenv from 'dotenv'
 dotenv.config()
@@ -44,8 +45,23 @@ async function transferRewards() {
         console.error('Failed to transfer rewards', error)
     }
 }
+
+async function burn(){
+    const burnManager = new ethers.Contract(BURN_MANAGER_ADDRESS, BURN_MANAGER_ABI, signer)
+    try {
+        const estimateGas = await burnManager.estimateGas.burn()
+        await burnManager.burn({
+            gasLimit: calculateGasMargin(estimateGas)
+        })
+        console.log('Rewards burned')
+    }
+    catch (error) {
+        console.error('Failed to burn rewards', error)
+    }
+}
+
 setInterval(buyback, Number(process.env.INTERVAL))
 setInterval(transferRewards, 7 * 24 * 60 * 60 * 1000)
+setInterval(burn, 7 * 24 * 60 * 60 * 1000)
 
 console.log('Starting buybacks and rewards bot...')
-

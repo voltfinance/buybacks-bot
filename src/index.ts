@@ -60,8 +60,8 @@ async function burn(){
     }
 }
 
-setInterval(buyback, Number(process.env.INTERVAL))
+setInterval(buyback, 24 * 60 * 60 * 1000)
 setInterval(transferRewards, 7 * 24 * 60 * 60 * 1000)
-setInterval(burn, 60 * 60 * 1000)
+setInterval(burn, 24 * 60 * 60 * 1000)
 
 console.log('Starting buybacks and rewards bot...')

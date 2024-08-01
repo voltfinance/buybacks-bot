@@ -18,7 +18,9 @@ async function buyback() {
             try {
                 const estimateGas = await feeManager.estimateGas.collectFee(i)
                 await feeManager.collectFee(i, {
-                    gasLimit: BigNumber.from(20000000)
+                    gasLimit: BigNumber.from(20000000),
+                    maxFeePerGas: 20000000000,
+                    maxPriorityFeePerGas: 15000000000
                 })
 
                 console.log(`Convert run for ${i} feeCollector`)
@@ -37,7 +39,9 @@ async function transferRewards() {
     try {
         const estimateGas = await feeManager.estimateGas.distribute()
         await feeManager.distribute({
-            gasLimit: calculateGasMargin(estimateGas)
+            gasLimit: calculateGasMargin(estimateGas),
+            maxFeePerGas: 20000000000,
+            maxPriorityFeePerGas: 15000000000
         })
         console.log('Rewards transferred')
     }
@@ -46,12 +50,14 @@ async function transferRewards() {
     }
 }
 
-async function burn(){
+async function burn() {
     const burnManager = new ethers.Contract(BURN_MANAGER_ADDRESS, BURN_MANAGER_ABI, signer)
     try {
         const estimateGas = await burnManager.estimateGas.burn()
         await burnManager.burn({
-            gasLimit: calculateGasMargin(estimateGas)
+            gasLimit: calculateGasMargin(estimateGas),
+            maxFeePerGas: 20000000000,
+            maxPriorityFeePerGas: 15000000000
         })
         console.log('Rewards burned')
     }
